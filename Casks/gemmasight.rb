@@ -1,9 +1,9 @@
 cask "gemmasight" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.5.3"
-  sha256 arm:   "a0e1c3b5b25ea94f94a918f88bce7b0f19730c18313448d3a67cd4e0dd5eabf0",
-         intel: "73d3eccf17aa22b4daff3a50d7126f8a86879529f62b2c323b900d37b7187915"
+  version "1.5.4"
+  sha256 arm:   "9d2fd62334fd8d8dafb69e8339c7f1aaa64219cd0570a3c10c5a353260c09c89",
+         intel: "4393c87136f2430c0bda3bb0ce45d9be2a247d40536815d8cdd7d45a71f48b4d"
 
   url "https://github.com/blue1st/gemma-sight/releases/download/v#{version}/gemmasight-#{version}-#{arch}.dmg"
   name "GemmaSight"
