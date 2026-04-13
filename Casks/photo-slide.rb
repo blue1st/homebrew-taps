@@ -12,6 +12,12 @@ cask "photo-slide" do
 
   app "PhotoSlide.app"
 
+  installer script: {
+    executable: "/usr/bin/xattr",
+    args:       ["-rd", "com.apple.quarantine", "#{appdir}/PhotoSlide.app"],
+    sudo:       false,
+  }
+
   zap trash: [
     "~/Library/Application Support/photo-slide",
     "~/Library/Preferences/com.kawasaki.photo-slide.plist",

@@ -12,6 +12,12 @@ cask "gemmasight" do
 
   app "GemmaSight.app"
 
+  installer script: {
+    executable: "/usr/bin/xattr",
+    args:       ["-rd", "com.apple.quarantine", "#{appdir}/GemmaSight.app"],
+    sudo:       false,
+  }
+
   zap trash: [
     "~/Library/Application Support/gemmasight",
     "~/Library/Logs/gemmasight",
