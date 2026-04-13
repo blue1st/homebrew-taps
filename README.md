@@ -38,6 +38,14 @@ brew install --cask photo-slide
 brew install --cask caffei-native
 ```
 
+### [TimesFM Sandbox](https://github.com/blue1st/timesfm-sandbox)
+
+TimesFMベースの時系列予測を行うためのSandbox環境を提供するmacOS向けデスクトップアプリケーション。
+
+```bash
+brew install --cask timesfm-sandbox
+```
+
 ---
 
 ## 開発者向け
