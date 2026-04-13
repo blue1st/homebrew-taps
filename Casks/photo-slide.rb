@@ -12,11 +12,11 @@ cask "photo-slide" do
 
   app "PhotoSlide.app"
 
-  installer script: {
-    executable: "/usr/bin/xattr",
-    args:       ["-rd", "com.apple.quarantine", "#{appdir}/PhotoSlide.app"],
-    sudo:       false,
-  }
+  postflight do
+    system_command "xattr",
+                   args: ["-cr", "#{appdir}/PhotoSlide.app"],
+                   sudo: false
+  end
 
   zap trash: [
     "~/Library/Application Support/photo-slide",

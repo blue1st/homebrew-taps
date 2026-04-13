@@ -11,6 +11,12 @@ cask "gemmasight" do
   homepage "https://github.com/blue1st/gemma-sight"
 
   app "GemmaSight.app"
+  
+  postflight do
+    system_command "xattr",
+                   args: ["-cr", "#{appdir}/GemmaSight.app"],
+                   sudo: false
+  end
 
   zap trash: [
     "~/Library/Application Support/gemmasight",

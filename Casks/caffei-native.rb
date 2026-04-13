@@ -12,11 +12,11 @@ cask "caffei-native" do
 
   app "Caffei Native.app"
 
-  installer script: {
-    executable: "/usr/bin/xattr",
-    args:       ["-rd", "com.apple.quarantine", "#{appdir}/Caffei Native.app"],
-    sudo:       false,
-  }
+  postflight do
+    system_command "xattr",
+                   args: ["-cr", "#{appdir}/Caffei Native.app"],
+                   sudo: false
+  end
 
   zap trash: [
     "~/Library/Application Support/com.blue1st.caffei-native",
