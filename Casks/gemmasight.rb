@@ -1,22 +1,16 @@
 cask "gemmasight" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.4.3"
-  sha256 arm:   "fed09dceb0245b876bf02a46dd8a454bb0902f3850db86d8ee69c6c73c2bf623",
-         intel: "fed09dceb0245b876bf02a46dd8a454bb0902f3850db86d8ee69c6c73c2bf623"
+  version "1.4.5"
+  sha256 arm:   "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5",
+         intel: "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
 
-  url "https://github.com/blue1st/gemma-sight/releases/download/v#{version}/gemmasight-#{version}.dmg"
+  url "https://github.com/blue1st/gemma-sight/releases/download/v#{version}/gemmasight-#{version}-#{arch}.dmg"
   name "GemmaSight"
   desc "Real-time AI screen description app powered by Gemma 4"
   homepage "https://github.com/blue1st/gemma-sight"
 
   app "GemmaSight.app"
-
-  installer script: {
-    executable: "/usr/bin/xattr",
-    args:       ["-rd", "com.apple.quarantine", "#{appdir}/GemmaSight.app"],
-    sudo:       false,
-  }
 
   zap trash: [
     "~/Library/Application Support/gemmasight",
