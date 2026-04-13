@@ -1,11 +1,11 @@
 cask "timesfm-sandbox" do
-  arch arm: "arm64", intel: "mac"
+  arch arm: "-arm64", intel: ""
 
   version "0.0.1"
   sha256 arm:   "08be2badc971145a72b2c857045e46372be0023589de1bd838c4ae34eb6d6c62",
          intel: "3a64887aa1dd5d3f1be54d0bea542d9888672ad2a7a30ccb9d4c97b4b4cfaeef"
 
-  url "https://github.com/blue1st/timesfm-sandbox/releases/download/v#{version}/TimesFM.Sandbox-#{version}-#{arch}.dmg"
+  url "https://github.com/blue1st/timesfm-sandbox/releases/download/v#{version}/TimesFM-Sandbox-#{version}#{arch}.dmg"
   name "TimesFM Sandbox"
   desc "Time-Series Forecasting Sandbox based on TimesFM"
   homepage "https://github.com/blue1st/timesfm-sandbox"
