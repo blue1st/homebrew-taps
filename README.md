@@ -14,6 +14,14 @@ brew tap blue1st/taps
 
 ## 公開ツール
 
+### [GemmaSight](https://github.com/blue1st/gemma-sight)
+
+Real-time AI screen description app powered by Gemma 4 and Transformers.js.
+
+```bash
+brew install --cask gemmasight
+```
+
 ### [PhotoSlide](https://github.com/blue1st/photo-slide)
 
 シンプルなフォトスライドショーアプリケーション。
