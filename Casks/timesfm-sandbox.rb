@@ -12,8 +12,8 @@ cask "timesfm-sandbox" do
   app "TimesFM Sandbox.app"
 
   postflight do
-    system_command "xattr",
-                   args: ["-cr", "#{appdir}/TimesFM Sandbox.app"],
+    system_command "/usr/bin/find",
+                   args: ["#{appdir}/TimesFM Sandbox.app", "-type", "f", "-exec", "xattr", "-c", "{}", ";"],
                    sudo: false
   end
 
