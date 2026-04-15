@@ -1,8 +1,7 @@
 cask "timesfm-sandbox" do
   arch arm: "-arm64", intel: "-x64"
-  version "0.5.10"
-  sha256 arm:   "92a06b5378d2c22ac34eb88340599803b970129333fb64c1ec499e5ed050ae6c",
-         intel: "db5c7ddc3e367644dde78c62b2c18f2765bdccd71320b1216e6f0b7ea5d5f738"
+  version "0.5.16"
+  sha256 :no_check
 
   url "https://github.com/blue1st/timesfm-sandbox/releases/download/v#{version}/TimesFM-Sandbox-#{version}#{arch}.dmg"
   name "TimesFM Sandbox"
