@@ -1,6 +1,6 @@
 cask "timesfm-sandbox" do
-  version "0.6.3"
-  sha256 "fd197625519f67fc6714abc8275a788f143045044e4e843538d3110b12166142"
+  version "0.6.4"
+  sha256 "f234bfdec42baea6a0486c019167d621221516dc91e1cf9b51859d5f8fadc4fe"
 
   url "https://github.com/blue1st/timesfm-sandbox/releases/download/v#{version}/TimesFM-Sandbox-#{version}-arm64.dmg"
   name "TimesFM Sandbox"
