@@ -1,6 +1,6 @@
 cask "danmaku-electron" do
-  version "1.2.4"
-  sha256 "6388f047f22282e9e0e75635c79a67f1937ae70e19fc95dea2c9c39cc2f5d745"
+  version "1.3.0"
+  sha256 "9dc413ca47ac1481531e5f09f477e9d943ddf8a290c6e6e01744f78452465f67"
 
   url "https://github.com/blue1st/danmaku-electron/releases/download/v#{version}/danmaku-electron-#{version}-arm64.dmg"
   name "Danmaku Electron"
@@ -13,8 +13,11 @@ cask "danmaku-electron" do
   depends_on arch: :arm64
 
   postflight do
-    system_command "xattr",
-                   args: ["-cr", "#{appdir}/danmaku-electron.app"],
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/danmaku-electron.app"],
+                   sudo: false
+    system_command "/usr/bin/codesign",
+                   args: ["--force", "--deep", "--sign", "-", "#{appdir}/danmaku-electron.app"],
                    sudo: false
   end
 
