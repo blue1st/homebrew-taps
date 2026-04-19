@@ -1,9 +1,9 @@
 cask "caffei-native" do
   arch arm: "aarch64", intel: "x64"
 
-  version "0.1.11"
-  sha256 arm:   "69ec949526a45211716a52b5b1beca716304fea3a64ec655aa47445da3b17898",
-         intel: "8c8472638bb3d244556d63db30bb7836b13f247fcf19272f24c47271e958d8d6"
+  version "0.1.12"
+  sha256 arm:   "5ea5ed2bbf8a7f182d07d3436a82766b8df5bd77cba3b3437f3d320c9c614b22",
+         intel: "c730492b2184a7c1c52cf82070a30e5b5f8fd213a509dfd65422c468346f227c"
 
   url "https://github.com/blue1st/caffei-native/releases/download/v#{version}/Caffei.Native_#{version}_#{arch}.dmg"
   name "Caffei Native"
