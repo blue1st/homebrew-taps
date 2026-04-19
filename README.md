@@ -46,6 +46,14 @@ TimesFMベースの時系列予測を行うためのSandbox環境を提供する
 brew install --cask timesfm-sandbox
 ```
 
+### [Danmaku Electron](https://github.com/blue1st/danmaku-electron)
+
+デスクトップ画面をAIがリアルタイムに実況・解説するオーバーレイアプリケーション。
+
+```bash
+brew install --cask danmaku-electron
+```
+
 ---
 
 ## 開発者向け
