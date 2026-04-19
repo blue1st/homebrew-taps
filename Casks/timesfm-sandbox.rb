@@ -13,11 +13,8 @@ cask "timesfm-sandbox" do
   depends_on arch: :arm64
 
   postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/TimesFM Sandbox.app"],
-                   sudo: false
-    system_command "/usr/bin/codesign",
-                   args: ["--force", "--deep", "--sign", "-", "#{appdir}/TimesFM Sandbox.app"],
+    system_command "xattr",
+                   args: ["-cr", "#{appdir}/TimesFM Sandbox.app"],
                    sudo: false
   end
 
