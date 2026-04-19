@@ -54,6 +54,14 @@ brew install --cask timesfm-sandbox
 brew install --cask danmaku-electron
 ```
 
+### [VLM-Tactile](https://github.com/blue1st/vlm-tactile)
+
+Vision Language Model (VLM) を利用したデスクトップ操作自動化エージェント。
+
+```bash
+brew install --cask vlm-tactile
+```
+
 ---
 
 ## 開発者向け
