@@ -1,6 +1,6 @@
 cask "vlm-tactile" do
-  version "1.1.2"
-  sha256 "09f0c464827b61fff84c2e7bd5d6a7539aa90fd825767b8859c2af65dda62e78"
+  version "1.1.4"
+  sha256 "2b0231dd75d281bcaf644e1a5032f24708a73143a20624b7a9b9da06c2e64e1d"
 
   url "https://github.com/blue1st/vlm-tactile/releases/download/v#{version}/VLM-Tactile-#{version}-arm64.dmg"
   name "VLM-Tactile"
