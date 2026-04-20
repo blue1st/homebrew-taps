@@ -1,9 +1,9 @@
 cask "photo-slide" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.3.0"
-  sha256 arm:   "d1e4026c92907a6b99fa9b01037f4268d4ab322060b3737abc3a35f9976627e2",
-         intel: "859b8040cb8bbb9c8493f1fd15a0f54410d8b0b5dbf81aa9275dfa7edac3ac9b"
+  version "1.4.0"
+  sha256 arm:   "311fe10e8696c93c7d87e96f53a3ba5e0913ce321fabbd8bec8e5d35d8dff40c",
+         intel: "623b299044cb3f44349fcf63c0018ea07f593fbd2c605f442f37ffc77dcf92e4"
 
   url "https://github.com/blue1st/photo-slide/releases/download/v#{version}/PhotoSlide-#{version}-#{arch}.dmg"
   name "PhotoSlide"
