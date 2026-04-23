@@ -1,6 +1,6 @@
 cask "snapset" do
-  version "1.0.0"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000" # Initial placeholder
+  version "1.1.3"
+  sha256 "8dda36d85b28c65929ce61001f0eb03fc52e351e6a844162773029c602fc7c20"
 
   url "https://github.com/blue1st/snapset/releases/download/v#{version}/snapset-#{version}-arm64.dmg"
   name "SnapSet"
