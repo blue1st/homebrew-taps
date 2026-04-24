@@ -16,7 +16,7 @@ brew tap blue1st/taps
 
 ### [GemmaSight](https://github.com/blue1st/gemma-sight)
 
-Real-time AI screen description app powered by Gemma 4 and Transformers.js.
+Gemma 4 と Transformers.js を活用した、リアルタイム AI 画面解説アプリケーション。
 
 ```bash
 brew install --cask gemmasight
@@ -60,6 +60,14 @@ Vision Language Model (VLM) を利用したデスクトップ操作自動化エ�
 
 ```bash
 brew install --cask vlm-tactile
+```
+
+### [SnapSet](https://github.com/blue1st/snapset)
+
+コンテンツ作成時のサイズ指定があるスクリーンショットを効率的に作成するためのツール。
+
+```bash
+brew install --cask snapset
 ```
 
 ---
