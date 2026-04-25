@@ -1,6 +1,6 @@
 cask "danmaku-electron" do
-  version "1.4.3"
-  sha256 "909dc91e22a07fe484d368e763091106641ee1abd54102fb7dbc7220e978da53"
+  version "1.4.4"
+  sha256 "35d77ff05c87b571a46015c8c7dd9f3d904ea4dee60406f65de3f6cc3516aa9a"
 
   url "https://github.com/blue1st/danmaku-electron/releases/download/v#{version}/danmaku-electron-#{version}-arm64.dmg"
   name "Danmaku Electron"
