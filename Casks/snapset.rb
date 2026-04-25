@@ -1,6 +1,6 @@
 cask "snapset" do
-  version "1.2.1"
-  sha256 "8fbc17e3d156d3e7cd84cf4d85ab4559051aaad81f0aa30bb805420044caff4c"
+  version "1.2.2"
+  sha256 "b643391ae9d4abc8512df026cf45f72da8e51654fe341f768afa9e68354cba69"
 
   url "https://github.com/blue1st/snapset/releases/download/v#{version}/snapset-#{version}-arm64.dmg"
   name "SnapSet"
