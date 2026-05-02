@@ -1,9 +1,9 @@
 cask "playwright-studio" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.0.6"
-  sha256 arm:   "761abc392b651496cd18520e74146270383c600723e6754d7191da7ff347850a",
-         intel: "61a5d5fe7a751cd635e66e00d8823d155f1dd328c2b2a6bd6da6ec5d141bf488"
+  version "0.0.7"
+  sha256 arm:   "afb6b0e067f76da7fa4d946e1b579b1f8d8fe456a9a48d9ef83437626b3abf2f",
+         intel: "ffc6fb717165cc8871bb67d02ca1157d09c78aa30c6f8acec7f4e994f96d18a0"
 
   url "https://github.com/blue1st/playwright-gui/releases/download/v#{version}/playwright-gui_#{version}_#{arch}.dmg"
   name "Playwright Studio"
