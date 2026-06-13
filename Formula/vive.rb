@@ -1,25 +1,25 @@
 class Vive < Formula
   desc "Terminal session recorder and clean summary generator"
   homepage "https://github.com/blue1st/vive"
-  version "0.1.1"
+  version "0.1.2"
 
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/blue1st/vive/releases/download/v#{version}/vive-#{version}-darwin-amd64.tar.gz"
-      sha256 "bb3705e18b541e03ac53d24927885f042d69daa80091f3911330b4b920030df5"
+      sha256 "84d62843de087132cfba30df038db5d9c87c9017e9998064b5dbd3bcb26cc845"
     else
       url "https://github.com/blue1st/vive/releases/download/v#{version}/vive-#{version}-darwin-arm64.tar.gz"
-      sha256 "1d07705fa102bd96560fdea9bc0e608835209cee9f95c33d11a6e1c3453d757d"
+      sha256 "c777e6677a410accae740c3a8e062608b9aa5f5018f4b80d034c8dd63421acb0"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/blue1st/vive/releases/download/v#{version}/vive-#{version}-linux-amd64.tar.gz"
-      sha256 "52199a6ca4abd8d98c8d761183f9d3e30a43b5a3a772dad0c176ff20ff7b8dfa"
+      sha256 "95785cebe94c53d0ef9dbd0c3642bfa6b772c7a089be0875ef12821475073ea0"
     else
       url "https://github.com/blue1st/vive/releases/download/v#{version}/vive-#{version}-linux-arm64.tar.gz"
-      sha256 "91389e0908a9d3b0485ff128fb766ba7c488ff40500327e94961f5e01016001a"
+      sha256 "14e8ffbd4cb86048082b4ac8443efdbf2d0e30ab851336a2fc9efe0da458a690"
     end
   end
 
