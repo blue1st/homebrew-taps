@@ -1,6 +1,6 @@
 cask "obsidian-quick-entry" do
-  version "0.1.35"
-  sha256 "43d857e86f1b2c66be5a6534ba7c3c8ba9371494b9fc82d4a05b5584aab43edc"
+  version "0.1.36"
+  sha256 "a77ca03a0e19fcaccf7e2a274547bf72c0f7bb05f977d7dcc9b22b9061d600ff"
 
   url "https://github.com/blue1st/obsidian-quick-entry/releases/download/v#{version}/Obsidian.Quick.Entry_#{version}_universal.dmg"
   name "Obsidian Quick Entry"
