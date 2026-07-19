@@ -1,8 +1,8 @@
 cask "magi-system" do
-  version "1.4.0"
-  sha256 "21fc000bae8cd6eb0c0d0ff6da95e57fbcd96a405108b4cc32eb54b3f8f973fc"
+  version "1.5.0"
+  sha256 "2de2c57df44bf7e8df3c17c45493c3c000bccae0602aa694257fd617009a8949"
 
-  url "https://github.com/blue1st/electron-magi-system/releases/download/v#{version}/MAGI-System-1.4.0-mac.zip"
+  url "https://github.com/blue1st/electron-magi-system/releases/download/v#{version}/MAGI-System-1.5.0-mac.zip"
   name "MAGI System"
   desc "Tripartite Consensus AI Deliberation System for Electron"
   homepage "https://github.com/blue1st/electron-magi-system"
