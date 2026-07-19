@@ -1,6 +1,6 @@
 cask "magi-system" do
-  version "1.1.0"
-  sha256 "a5c2f2eb7edcbb43f99d5749b1cb30ee265aa158342caeaf52fd74c585e3bca5"
+  version "1.2.0"
+  sha256 "9f4bec88589ac390897d68e37c6130fbfc99ad6fa07c63a40a1107660767afd0"
 
   url "https://github.com/blue1st/magi-system/releases/download/v#{version}/MAGI.System-#{version}-mac.zip"
   name "MAGI System"
