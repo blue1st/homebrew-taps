@@ -70,8 +70,41 @@ brew install --cask vlm-tactile
 brew install --cask snapset
 ```
 
+### [MAGI System](https://github.com/blue1st/magi-system)
+
+3つのAIモデルによる合議制意思決定・ブレインストーミングを行うためのElectronベースのデスクトップアプリケーション。
+
+```bash
+brew install --cask magi-system
+```
+
+### [Obsidian Quick Entry](https://github.com/blue1st/obsidian-quick-entry)
+
+システムトレイから素早くObsidianへメモを入力・保存するためのウィジェットアプリケーション。
+
+```bash
+brew install --cask obsidian-quick-entry
+```
+
+### [Playwright Studio](https://github.com/blue1st/playwright-gui)
+
+Playwrightのスクリプト記録および実行スケジュール管理を行うためのElectron GUIアプリケーション。
+
+```bash
+brew install --cask playwright-studio
+```
+
+### [Vive](https://github.com/blue1st/vive)
+
+ターミナルセッションを記録し、クリーンな概要を自動生成するコマンドラインツール。
+
+```bash
+brew install vive
+```
+
 ---
 
 ## 開発者向け
 
 新しく Cask を追加した場合は、`Casks/` ディレクトリに `.rb` ファイルを配置してください。
+
