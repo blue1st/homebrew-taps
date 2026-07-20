@@ -1,6 +1,6 @@
 cask "frisbee" do
-  version "0.1.5"
-  sha256 "85975b3949510af942ee44134adf19c9240a0f39997d8ae176b793b8e0e0b9c4"
+  version "0.1.6"
+  sha256 "e0dee53c504fbea07b47cbb337fdc1e96833a3c0c77dab44ced24a3a63ea066f"
 
   url "https://github.com/blue1st/frisbee/releases/download/v#{version}/Frisbee_#{version}_universal.dmg"
   name "Frisbee"
