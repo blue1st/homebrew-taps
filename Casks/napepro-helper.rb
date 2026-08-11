@@ -1,8 +1,8 @@
 cask "napepro-helper" do
-  version "1.0.6"
-  sha256 "20309419433fe6afd6c9cc4f3a6c6f45822c3c4952be98d0b7bb59598d63dc7f"
+  version "1.0.7"
+  sha256 "7d15f58430876f409a1afbb5eb9ec1a3db7a1ace4664cde3c9148e18273d4414"
 
-  url "https://github.com/blue1st/NapeProHelper/releases/download/v#{version}/Nape.Pro.Helper_1.0.6_universal.dmg"
+  url "https://github.com/blue1st/NapeProHelper/releases/download/v#{version}/Nape.Pro.Helper_1.0.7_universal.dmg"
   name "Nape Pro Helper"
   desc "System tray companion helper application for Keychron Nape Pro trackball device"
   homepage "https://github.com/blue1st/NapeProHelper"
