@@ -12,6 +12,11 @@ cask "webmcp-deck" do
 
   app "WebMCP Deck.app"
 
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-cr", "#{appdir}/WebMCP Deck.app"]
+  end
+
   zap trash: [
     "~/Library/Application Support/webmcp-deck",
     "~/Library/Preferences/com.blue1st.webmcp-deck.plist",
