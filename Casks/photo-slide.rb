@@ -1,9 +1,9 @@
 cask "photo-slide" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.8.0"
-  sha256 arm:   "3aa2e0d3828182022bc6b4501debcf9f0769e0902420f63a5542235ebd175b10",
-         intel: "9e2beaa371b3b669fcbe76d728d641cb75a49cb001e236e8b46691635498ac03"
+  version "1.8.1"
+  sha256 arm:   "b3bc282c0693314fbb06969484160b31bb425ba37de5376e4e01c1ef417bd67d",
+         intel: "62feb4e7b1cc93853c4fea7f74d1e94a2c889d4f8152ced4c812f10ff253c5e6"
 
   url "https://github.com/blue1st/photo-slide/releases/download/v#{version}/PhotoSlide-#{version}-#{arch}.dmg"
   name "PhotoSlide"
@@ -13,7 +13,7 @@ cask "photo-slide" do
   app "PhotoSlide.app"
   
   postflight_steps do
-    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/PhotoSlide.app"]
+    run "/usr/bin/xattr", args: ["-cr", "#{appdir}/PhotoSlide.app"]
   end
 
   zap trash: [
