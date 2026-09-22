@@ -1,6 +1,6 @@
 cask "obsidian-quick-entry" do
-  version "0.2.6"
-  sha256 "f7f6f27d71b0d1318f4fcb8dd750af9edfe8cb17b5e94b541c5b6e90af5a1978"
+  version "0.2.7"
+  sha256 "d2e65198052e99de6c371f5a1d86cb9c268e81c38c719ef6d08dbee71433bd26"
 
   url "https://github.com/blue1st/obsidian-quick-entry/releases/download/v#{version}/Obsidian.Quick.Entry_#{version}_universal.dmg"
   name "Obsidian Quick Entry"
@@ -10,7 +10,7 @@ cask "obsidian-quick-entry" do
   app "Obsidian Quick Entry.app"
 
   postflight_steps do
-    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/Obsidian Quick Entry.app"]
+    run "/usr/bin/xattr", args: ["-cr", "#{appdir}/Obsidian Quick Entry.app"]
   end
 
   zap trash: [
