@@ -1,9 +1,9 @@
 cask "gemmasight" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.5.4"
-  sha256 arm:   "9d2fd62334fd8d8dafb69e8339c7f1aaa64219cd0570a3c10c5a353260c09c89",
-         intel: "4393c87136f2430c0bda3bb0ce45d9be2a247d40536815d8cdd7d45a71f48b4d"
+  version "1.5.5"
+  sha256 arm:   "aa2023f41b2dcb875010c0b07a5068fad7ff9ff6463128ae8b398846a66a5f96",
+         intel: "cf49a828bd057566ec2299ef7ece01aa8d63a30c2ca6561dd21328a52dd56ec9"
 
   url "https://github.com/blue1st/gemma-sight/releases/download/v#{version}/gemmasight-#{version}-#{arch}.dmg"
   name "GemmaSight"
@@ -13,7 +13,7 @@ cask "gemmasight" do
   app "GemmaSight.app"
   
   postflight_steps do
-    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/GemmaSight.app"]
+    run "/usr/bin/xattr", args: ["-cr", "#{appdir}/GemmaSight.app"]
   end
 
   zap trash: [
