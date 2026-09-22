@@ -13,7 +13,7 @@ cask "webmcp-deck" do
   app "WebMCP Deck.app"
 
   postflight_steps do
-    run "/usr/bin/xattr", args: ["-cr", "#{appdir}/WebMCP Deck.app"]
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/WebMCP Deck.app"]
   end
 
   zap trash: [

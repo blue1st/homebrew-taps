@@ -13,7 +13,7 @@ cask "timesfm-sandbox" do
   depends_on arch: :arm64
 
   postflight_steps do
-    run "/usr/bin/xattr", args: ["-cr", "#{appdir}/TimesFM Sandbox.app"]
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/TimesFM Sandbox.app"]
   end
 
   zap trash: [

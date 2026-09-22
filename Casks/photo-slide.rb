@@ -13,7 +13,7 @@ cask "photo-slide" do
   app "PhotoSlide.app"
   
   postflight_steps do
-    run "/usr/bin/xattr", args: ["-cr", "#{appdir}/PhotoSlide.app"]
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/PhotoSlide.app"]
   end
 
   zap trash: [

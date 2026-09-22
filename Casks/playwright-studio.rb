@@ -13,7 +13,7 @@ cask "playwright-studio" do
   app "Playwright Studio.app"
 
   postflight_steps do
-    run "/usr/bin/xattr", args: ["-cr", "#{appdir}/Playwright Studio.app"]
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/Playwright Studio.app"]
   end
 
   zap trash: [
