@@ -1,9 +1,9 @@
 cask "kindle-glean" do
   arch arm: "aarch64", intel: "x64"
 
-  version "0.1.0"
-  sha256 arm:   "52746efe6127e77b463db33b08e12a4c447786b8a8f96c0113cfa3699cd30a1a",
-         intel: "52746efe6127e77b463db33b08e12a4c447786b8a8f96c0113cfa3699cd30a1a"
+  version "0.2.0"
+  sha256 arm:   "a65336ee247166e9debac7a2f2f4dc6ad08601ef9fd41d9d530b94ebb6ec541b",
+         intel: "a65336ee247166e9debac7a2f2f4dc6ad08601ef9fd41d9d530b94ebb6ec541b"
 
   url "https://github.com/blue1st/kindle-glean/releases/download/v#{version}/Kindle.Glean_#{version}_#{arch}.dmg"
   name "Kindle Glean"
