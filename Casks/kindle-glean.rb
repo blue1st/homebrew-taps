@@ -11,10 +11,8 @@ cask "kindle-glean" do
 
   app "Kindle Glean.app"
 
-  postflight do
-    system_command "xattr",
-                   args: ["-cr", "#{appdir}/Kindle Glean.app"],
-                   sudo: false
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/Kindle Glean.app"]
   end
 
   zap trash: [

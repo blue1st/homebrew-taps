@@ -12,10 +12,8 @@ cask "caffei-native" do
 
   app "Caffei Native.app"
 
-  postflight do
-    system_command "xattr",
-                   args: ["-cr", "#{appdir}/Caffei Native.app"],
-                   sudo: false
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/Caffei Native.app"]
   end
 
   zap trash: [

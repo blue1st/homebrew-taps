@@ -12,10 +12,8 @@ cask "timesfm-sandbox" do
   # Only support Apple Silicon
   depends_on arch: :arm64
 
-  postflight do
-    system_command "xattr",
-                   args: ["-cr", "#{appdir}/TimesFM Sandbox.app"],
-                   sudo: false
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-cr", "#{appdir}/TimesFM Sandbox.app"]
   end
 
   zap trash: [

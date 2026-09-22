@@ -12,10 +12,8 @@ cask "gemmasight" do
 
   app "GemmaSight.app"
   
-  postflight do
-    system_command "xattr",
-                   args: ["-cr", "#{appdir}/GemmaSight.app"],
-                   sudo: false
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/GemmaSight.app"]
   end
 
   zap trash: [

@@ -9,9 +9,7 @@ cask "magi-system" do
 
   app "MAGI System.app"
 
-  postflight do
-    system_command "xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/MAGI System.app"],
-                   sudo: false
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/MAGI System.app"]
   end
 end

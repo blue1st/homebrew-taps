@@ -12,10 +12,8 @@ cask "playwright-studio" do
 
   app "Playwright Studio.app"
 
-  postflight do
-    system_command "xattr",
-                   args: ["-cr", "#{appdir}/Playwright Studio.app"],
-                   sudo: false
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-cr", "#{appdir}/Playwright Studio.app"]
   end
 
   zap trash: [

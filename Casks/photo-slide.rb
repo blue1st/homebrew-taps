@@ -12,10 +12,8 @@ cask "photo-slide" do
 
   app "PhotoSlide.app"
   
-  postflight do
-    system_command "xattr",
-                   args: ["-cr", "#{appdir}/PhotoSlide.app"],
-                   sudo: false
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-cr", "#{appdir}/PhotoSlide.app"]
   end
 
   zap trash: [
