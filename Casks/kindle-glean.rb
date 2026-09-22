@@ -1,14 +1,13 @@
 cask "kindle-glean" do
-  arch arm: "aarch64", intel: "x64"
+  version "0.2.1"
+  sha256 "d3c59a79626b84862cbb511f62b6eb3ad14f859361961df1967ac7c60e7cba93"
 
-  version "0.2.0"
-  sha256 arm:   "a65336ee247166e9debac7a2f2f4dc6ad08601ef9fd41d9d530b94ebb6ec541b",
-         intel: "a65336ee247166e9debac7a2f2f4dc6ad08601ef9fd41d9d530b94ebb6ec541b"
-
-  url "https://github.com/blue1st/kindle-glean/releases/download/v#{version}/Kindle.Glean_#{version}_#{arch}.dmg"
+  url "https://github.com/blue1st/kindle-glean/releases/download/v#{version}/Kindle.Glean_#{version}_aarch64.dmg"
   name "Kindle Glean"
   desc "Extract Kindle highlights, notes, and vocabulary to local Markdown"
   homepage "https://github.com/blue1st/kindle-glean"
+
+  depends_on arch: :arm64
 
   app "Kindle Glean.app"
 
