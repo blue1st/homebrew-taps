@@ -1,6 +1,6 @@
 cask "vlm-tactile" do
-  version "1.1.4"
-  sha256 "2b0231dd75d281bcaf644e1a5032f24708a73143a20624b7a9b9da06c2e64e1d"
+  version "1.1.5"
+  sha256 "ccb3100df23b9204277a851580abc0ab3ca3faf125eab5330cb4d62c58f38486"
 
   url "https://github.com/blue1st/vlm-tactile/releases/download/v#{version}/VLM-Tactile-#{version}-arm64.dmg"
   name "VLM-Tactile"
@@ -13,8 +13,8 @@ cask "vlm-tactile" do
   depends_on arch: :arm64
 
   postflight_steps do
-    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/VLM-Tactile.app"]
-    run "/usr/bin/codesign", args: ["--force", "--deep", "--sign", "-", "{{appdir}}/VLM-Tactile.app"]
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/VLM-Tactile.app"]
+    run "/usr/bin/codesign", args: ["--force", "--deep", "--sign", "-", "#{appdir}/VLM-Tactile.app"]
   end
 
   zap trash: [
