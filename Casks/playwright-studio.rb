@@ -1,9 +1,9 @@
 cask "playwright-studio" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.0.9"
-  sha256 arm:   "830b8c224006acbde0d31cedd6f5de1dea540e5eeaa1c8cc2b91310dfe01c273",
-         intel: "c9ed8dbb801cffd931fb549578b264e8297348fad0513234b9af8c98eecd3905"
+  version "0.0.10"
+  sha256 arm:   "caf0473e5e2cbb67910e709b9f856d6641147c73e1d75fb1aad30a6ac2c6bd99",
+         intel: "442f48a7c68a9100f9d0ce8a4a8a9813ee0662bc7405ce611043f7d6ee94fc08"
 
   url "https://github.com/blue1st/playwright-gui/releases/download/v#{version}/playwright-gui_#{version}_#{arch}.dmg"
   name "Playwright Studio"
@@ -13,7 +13,7 @@ cask "playwright-studio" do
   app "Playwright Studio.app"
 
   postflight_steps do
-    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/Playwright Studio.app"]
+    run "/usr/bin/xattr", args: ["-cr", "#{appdir}/Playwright Studio.app"]
   end
 
   zap trash: [
