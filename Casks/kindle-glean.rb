@@ -1,6 +1,6 @@
 cask "kindle-glean" do
-  version "0.2.2"
-  sha256 "993e018dea1366d763345cff42b47f84f8a3922c150727d96ffb50412fb3ee35"
+  version "0.2.3"
+  sha256 "1593219e9a52e3889ebce63715711ec71fb3f3b2e6d10d1bb94f57a39af7451d"
 
   url "https://github.com/blue1st/kindle-glean/releases/download/v#{version}/Kindle.Glean_#{version}_aarch64.dmg"
   name "Kindle Glean"
@@ -11,10 +11,9 @@ cask "kindle-glean" do
 
   app "Kindle Glean.app"
 
-  postflight do
-    system_command "xattr",
-                   args: ["-cr", "#{appdir}/Kindle Glean.app"],
-                   sudo: false
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Kindle Glean.app"]
+    run "/usr/bin/codesign", args: ["--force", "--deep", "--sign", "-", "{{appdir}}/Kindle Glean.app"]
   end
 
   zap trash: [
