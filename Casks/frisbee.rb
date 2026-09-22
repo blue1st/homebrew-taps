@@ -1,6 +1,6 @@
 cask "frisbee" do
-  version "0.1.9"
-  sha256 "d39aa100dc943896311097579fdf14b7d98daebbd15b8e2e803ee39b55b85e2e"
+  version "0.1.10"
+  sha256 "4407fbd53a87d13db47043383b8be399a572a1d3dca97052a1256a8dfffcb758"
 
   url "https://github.com/blue1st/frisbee/releases/download/v#{version}/Frisbee_#{version}_universal.dmg"
   name "Frisbee"
@@ -10,7 +10,7 @@ cask "frisbee" do
   app "Frisbee.app"
 
   postflight_steps do
-    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/Frisbee.app"]
+    run "/usr/bin/xattr", args: ["-cr", "#{appdir}/Frisbee.app"]
   end
 
   zap trash: [
