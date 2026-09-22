@@ -1,6 +1,6 @@
 cask "timesfm-sandbox" do
-  version "0.7.1"
-  sha256 "78e745b7853c97f0ad6e78837653b6514c8287e662ac74682c77cd0a2169c6e0"
+  version "0.7.2"
+  sha256 "b9513b42278e6763f084f8bb339076b1bef1886b55d2ab3ba311c9094d154754"
 
   url "https://github.com/blue1st/timesfm-sandbox/releases/download/v#{version}/TimesFM-Sandbox-#{version}-arm64.dmg"
   name "TimesFM Sandbox"
@@ -13,7 +13,8 @@ cask "timesfm-sandbox" do
   depends_on arch: :arm64
 
   postflight_steps do
-    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/TimesFM Sandbox.app"]
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/TimesFM Sandbox.app"]
+    run "/usr/bin/codesign", args: ["--force", "--deep", "--sign", "-", "#{appdir}/TimesFM Sandbox.app"]
   end
 
   zap trash: [
