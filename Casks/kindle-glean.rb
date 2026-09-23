@@ -1,6 +1,6 @@
 cask "kindle-glean" do
-  version "0.2.9"
-  sha256 "9a740d7d884c950393e90ceb5b985412b05e6b5d0441c1a1fb9f053a0463ee51"
+  version "0.2.10"
+  sha256 "f37d712b022e3fe641993334a3992ca3d7d7cc2a13196414db393b5e05ff8f3b"
 
   url "https://github.com/blue1st/kindle-glean/releases/download/v#{version}/Kindle.Glean_#{version}_aarch64.dmg"
   name "Kindle Glean"
