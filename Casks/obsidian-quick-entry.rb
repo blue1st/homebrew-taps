@@ -10,7 +10,7 @@ cask "obsidian-quick-entry" do
   app "Obsidian Quick Entry.app"
 
   postflight_steps do
-    run "/usr/bin/xattr", args: ["-cr", "#{appdir}/Obsidian Quick Entry.app"]
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/Obsidian Quick Entry.app"]
   end
 
   zap trash: [
