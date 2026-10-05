@@ -1,9 +1,9 @@
 cask "webmcp-deck" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.0.2"
-  sha256 arm:   "688bf8e8681cb1051dea5a6a95b4f1431a4daa00c3fd4f184b3312dc93a9ac9f",
-         intel: "ebf6b2ad8752d0e13112a5e9b81f7e1c996d8c955d76cde12d6526ebd27353a1"
+  version "1.0.3"
+  sha256 arm:   "95777ca197e470379cc4e87307e34b4fda253183a47dc64a02c1075b62a15311",
+         intel: "9b5700b3840ceb399bc8af4108460a021b54437c506fb980aaeb6cda2cd3042e"
 
   url "https://github.com/blue1st/webmcp-deck/releases/download/v#{version}/WebMCP-Deck-#{version}-#{arch}.dmg"
   name "WebMCP Deck"
