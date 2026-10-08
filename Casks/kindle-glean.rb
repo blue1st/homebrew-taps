@@ -1,6 +1,6 @@
 cask "kindle-glean" do
-  version "0.2.12"
-  sha256 "a1ffdb35813e65f54c22f771f1a8357a47e72aedc4dd241b43d343a7c37af756"
+  version "0.2.14"
+  sha256 "5a64ddabf55456117db16624dda56cce6576a5c6fa848cf3d0f02ee564d03fcb"
 
   url "https://github.com/blue1st/kindle-glean/releases/download/v#{version}/Kindle.Glean_#{version}_aarch64.dmg"
   name "Kindle Glean"
@@ -11,10 +11,10 @@ cask "kindle-glean" do
 
   app "Kindle Glean.app"
 
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Kindle Glean.app"]
-    run "/usr/bin/codesign", args: ["--force", "--deep", "--sign", "-", "{{appdir}}/Kindle Glean.app"]
-  end
+  caveats <<~EOS
+    Kindle Glean is not notarized. If macOS blocks it from running, execute:
+      xattr -cr "/Applications/Kindle Glean.app"
+  EOS
 
   zap trash: [
     "~/Library/Application Support/com.kindleglean.app",
