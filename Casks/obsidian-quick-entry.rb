@@ -1,6 +1,6 @@
 cask "obsidian-quick-entry" do
-  version "0.2.8"
-  sha256 "891d17a9217bdbcf4bc61f646daea86de67d4214f75dba8b686f17cb3559cacd"
+  version "0.2.9"
+  sha256 "916873bdbf3ff3c828132330a2b2e400528cbe31870eaafbef653b47bd976f7e"
 
   url "https://github.com/blue1st/obsidian-quick-entry/releases/download/v#{version}/Obsidian.Quick.Entry_#{version}_universal.dmg"
   name "Obsidian Quick Entry"
@@ -9,9 +9,10 @@ cask "obsidian-quick-entry" do
 
   app "Obsidian Quick Entry.app"
 
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/Obsidian Quick Entry.app"]
-  end
+  caveats <<~EOS
+    Obsidian Quick Entry is not notarized. If macOS blocks it from running, execute:
+      xattr -cr "/Applications/Obsidian Quick Entry.app"
+  EOS
 
   zap trash: [
     "~/Library/Application Support/com.t-kawasaki.obsidian-quick-entry",
