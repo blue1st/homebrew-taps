@@ -1,9 +1,9 @@
 cask "gemmasight" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.5.5"
-  sha256 arm:   "aa2023f41b2dcb875010c0b07a5068fad7ff9ff6463128ae8b398846a66a5f96",
-         intel: "cf49a828bd057566ec2299ef7ece01aa8d63a30c2ca6561dd21328a52dd56ec9"
+  version "1.5.6"
+  sha256 arm:   "92534b315e5aaae2f223c965d931e5979bc6df86782bbc923d0f680325745590",
+         intel: "823d16a31be39608b646db67960d80c5e228144154664af4a29f99efb9a26437"
 
   url "https://github.com/blue1st/gemma-sight/releases/download/v#{version}/gemmasight-#{version}-#{arch}.dmg"
   name "GemmaSight"
@@ -11,10 +11,11 @@ cask "gemmasight" do
   homepage "https://github.com/blue1st/gemma-sight"
 
   app "GemmaSight.app"
-  
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-cr", "#{appdir}/GemmaSight.app"]
-  end
+
+  caveats <<~EOS
+    GemmaSight is not notarized. If macOS blocks it from running, execute:
+      xattr -cr "/Applications/GemmaSight.app"
+  EOS
 
   zap trash: [
     "~/Library/Application Support/gemmasight",
