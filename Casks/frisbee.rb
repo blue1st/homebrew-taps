@@ -1,6 +1,6 @@
 cask "frisbee" do
-  version "0.1.10"
-  sha256 "4407fbd53a87d13db47043383b8be399a572a1d3dca97052a1256a8dfffcb758"
+  version "0.1.11"
+  sha256 "6f6175fd69ede60a03873109916868932e576937dc502f51d77851e7642da38e"
 
   url "https://github.com/blue1st/frisbee/releases/download/v#{version}/Frisbee_#{version}_universal.dmg"
   name "Frisbee"
@@ -9,9 +9,10 @@ cask "frisbee" do
 
   app "Frisbee.app"
 
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-cr", "#{appdir}/Frisbee.app"]
-  end
+  caveats <<~EOS
+    Frisbee is not notarized. If macOS blocks it from running, execute:
+      xattr -cr "/Applications/Frisbee.app"
+  EOS
 
   zap trash: [
     "~/Library/Application Support/com.frisbee.app",
