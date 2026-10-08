@@ -1,9 +1,9 @@
 cask "photo-slide" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.8.1"
-  sha256 arm:   "b3bc282c0693314fbb06969484160b31bb425ba37de5376e4e01c1ef417bd67d",
-         intel: "62feb4e7b1cc93853c4fea7f74d1e94a2c889d4f8152ced4c812f10ff253c5e6"
+  version "1.8.2"
+  sha256 arm:   "4f04755b13c8e652e9e4dc488774a3007c141e5bf2c25ac6f21dcfcc8ec5cc6d",
+         intel: "9e34225d112dc50123564f669e3a660fa56544a9911dcf266cd13d8086dda7c2"
 
   url "https://github.com/blue1st/photo-slide/releases/download/v#{version}/PhotoSlide-#{version}-#{arch}.dmg"
   name "PhotoSlide"
@@ -11,10 +11,11 @@ cask "photo-slide" do
   homepage "https://github.com/blue1st/photo-slide"
 
   app "PhotoSlide.app"
-  
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-cr", "#{appdir}/PhotoSlide.app"]
-  end
+
+  caveats <<~EOS
+    PhotoSlide is not notarized. If macOS blocks it from running, execute:
+      xattr -cr "/Applications/PhotoSlide.app"
+  EOS
 
   zap trash: [
     "~/Library/Application Support/photo-slide",
