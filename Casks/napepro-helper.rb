@@ -1,17 +1,18 @@
 cask "napepro-helper" do
-  version "1.1.15"
-  sha256 "e4b143af88a18f875d6eaffd5b59c0a99562b8b01f9b27659100292c9efa6dbe"
+  version "1.1.16"
+  sha256 "46ced921f209d6625c82a3c33b5b28916d58b6aa7f429b4b5a2a265beeb5711e"
 
-  url "https://github.com/blue1st/NapeProHelper/releases/download/v#{version}/Nape.Pro.Helper_1.1.15_universal.dmg"
+  url "https://github.com/blue1st/NapeProHelper/releases/download/v#{version}/Nape.Pro.Helper_1.1.16_universal.dmg"
   name "Nape Pro Helper"
   desc "System tray companion helper application for Keychron Nape Pro trackball device"
   homepage "https://github.com/blue1st/NapeProHelper"
 
   app "Nape Pro Helper.app"
 
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-cr", "#{appdir}/Nape Pro Helper.app"]
-  end
+  caveats <<~EOS
+    Nape Pro Helper is not notarized. If macOS blocks it from running, execute:
+      xattr -cr "/Applications/Nape Pro Helper.app"
+  EOS
 
   zap trash: [
     "~/Library/Application Support/com.napepro.helper",
