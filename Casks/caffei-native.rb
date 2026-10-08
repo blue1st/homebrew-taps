@@ -1,9 +1,9 @@
 cask "caffei-native" do
   arch arm: "aarch64", intel: "x64"
 
-  version "0.1.14"
-  sha256 arm:   "2f4048d64f0b0bc2da95e855dcbbda3fc85a13b1fadcc3169f30e095e5aac7cc",
-         intel: "96d2e219db851dd4ebb2a2e2bc40e11a67d4e5356391adb53d90f1429147db15"
+  version "0.1.15"
+  sha256 arm:   "14344ec1e8d17fa4252df3b4c1e2977670439880a9cc8480eae8fcdab6ce8967",
+         intel: "09649aa63b4611ac7cd0593787323e29467e911685d8ecc72003d4fba56c5433"
 
   url "https://github.com/blue1st/caffei-native/releases/download/v#{version}/Caffei.Native_#{version}_#{arch}.dmg"
   name "Caffei Native"
@@ -12,9 +12,10 @@ cask "caffei-native" do
 
   app "Caffei Native.app"
 
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-cr", "#{appdir}/Caffei Native.app"]
-  end
+  caveats <<~EOS
+    Caffei Native is not notarized. If macOS blocks it from running, execute:
+      xattr -cr "/Applications/Caffei Native.app"
+  EOS
 
   zap trash: [
     "~/Library/Application Support/com.blue1st.caffei-native",
