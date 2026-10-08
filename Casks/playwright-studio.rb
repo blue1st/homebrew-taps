@@ -1,9 +1,9 @@
 cask "playwright-studio" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.0.10"
-  sha256 arm:   "caf0473e5e2cbb67910e709b9f856d6641147c73e1d75fb1aad30a6ac2c6bd99",
-         intel: "442f48a7c68a9100f9d0ce8a4a8a9813ee0662bc7405ce611043f7d6ee94fc08"
+  version "0.0.11"
+  sha256 arm:   "2c24f633c9e1534b620a76a97b6bacb7c8871352f45a7175be4da124bd934624",
+         intel: "e90c8aa0b3938938c6ac0213074b2d0cada511beb500352e5514ba6efe4ced82"
 
   url "https://github.com/blue1st/playwright-gui/releases/download/v#{version}/playwright-gui_#{version}_#{arch}.dmg"
   name "Playwright Studio"
@@ -12,9 +12,10 @@ cask "playwright-studio" do
 
   app "Playwright Studio.app"
 
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-cr", "#{appdir}/Playwright Studio.app"]
-  end
+  caveats <<~EOS
+    Playwright Studio is not notarized. If macOS blocks it from running, execute:
+      xattr -cr "/Applications/Playwright Studio.app"
+  EOS
 
   zap trash: [
     "~/Library/Application Support/com.playwright.studio",
