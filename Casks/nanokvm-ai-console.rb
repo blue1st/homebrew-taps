@@ -1,9 +1,9 @@
 cask "nanokvm-ai-console" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.0.3"
-  sha256 arm:   "80c9502421f6d37c384c876f954f01ce2c4fe10bc6955e557f4699cbd94bfe85",
-         intel: "1d0035a8dc025bdb7f1cff75e99cf78ad5e7d6845a7503d46edd2fe08ab7fae2"
+  version "1.0.4"
+  sha256 arm:   "9aa537625162719683a83b7c04257a8d02fca5073fe46c94ab94e29a91b0e413",
+         intel: "d19e99e0130f29a6cfcfa328365f4057197119dc0b65ac7200337b79d6670241"
 
   url "https://github.com/blue1st/nanokvm-ai-console/releases/download/v#{version}/NanoKVM-AI-Console-#{version}-mac-#{arch}.dmg"
   name "NanoKVM AI Console"
@@ -17,10 +17,10 @@ cask "nanokvm-ai-console" do
 
   app "NanoKVM AI Console.app"
 
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/NanoKVM AI Console.app"]
-    run "/usr/bin/codesign", args: ["--force", "--deep", "--sign", "-", "{{appdir}}/NanoKVM AI Console.app"]
-  end
+  caveats <<~EOS
+    NanoKVM AI Console is not notarized. If macOS blocks it from running, execute:
+      xattr -cr "/Applications/NanoKVM AI Console.app"
+  EOS
 
   zap trash: [
     "~/Library/Application Support/nanokvm-ai-console",
