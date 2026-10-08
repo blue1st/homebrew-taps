@@ -1,6 +1,6 @@
 cask "snapset" do
-  version "1.2.5"
-  sha256 "d7738b5917c21fbb0845877d8279c721eeace2f6ea4b5c173946880e0743553d"
+  version "1.2.7"
+  sha256 "d047ae3b62889a877be11210342f2086a758252ae9d308ef24c248d60cd45bd5"
 
   url "https://github.com/blue1st/snapset/releases/download/v#{version}/snapset-#{version}-arm64.dmg"
   name "SnapSet"
@@ -12,10 +12,10 @@ cask "snapset" do
   # Only support Apple Silicon (based on release assets)
   depends_on arch: :arm64
 
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/snapset.app"]
-    run "/usr/bin/codesign", args: ["--force", "--deep", "--sign", "-", "#{appdir}/snapset.app"]
-  end
+  caveats <<~EOS
+    SnapSet is not notarized. If macOS blocks it from running, execute:
+      xattr -cr "/Applications/snapset.app"
+  EOS
 
   zap trash: [
     "~/Library/Application Support/snapset",
