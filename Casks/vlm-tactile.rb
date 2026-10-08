@@ -1,6 +1,6 @@
 cask "vlm-tactile" do
-  version "1.1.5"
-  sha256 "ccb3100df23b9204277a851580abc0ab3ca3faf125eab5330cb4d62c58f38486"
+  version "1.1.7"
+  sha256 "35ab42606f265d75d1e43e4d27f0f6b69e913b14cf39dd6f9fac4c86448077fa"
 
   url "https://github.com/blue1st/vlm-tactile/releases/download/v#{version}/VLM-Tactile-#{version}-arm64.dmg"
   name "VLM-Tactile"
@@ -12,10 +12,10 @@ cask "vlm-tactile" do
   # Only support Apple Silicon (consistent with build script)
   depends_on arch: :arm64
 
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/VLM-Tactile.app"]
-    run "/usr/bin/codesign", args: ["--force", "--deep", "--sign", "-", "#{appdir}/VLM-Tactile.app"]
-  end
+  caveats <<~EOS
+    VLM-Tactile is not notarized. If macOS blocks it from running, execute:
+      xattr -cr "/Applications/VLM-Tactile.app"
+  EOS
 
   zap trash: [
     "~/Library/Application Support/vlm-tactile",
