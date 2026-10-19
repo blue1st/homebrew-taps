@@ -1,9 +1,9 @@
 cask "nanokvm-ai-console" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.0.4"
-  sha256 arm:   "9aa537625162719683a83b7c04257a8d02fca5073fe46c94ab94e29a91b0e413",
-         intel: "d19e99e0130f29a6cfcfa328365f4057197119dc0b65ac7200337b79d6670241"
+  version "1.0.5"
+  sha256 arm:   "f4c4d69bd18677838e1427829e004fecbd694c18d9a2fdaaa83f36087d8b00c6",
+         intel: "d91117c15d09182d0b06b0f44b3eac027e11d313c822b85469ee968a3f7a0aca"
 
   url "https://github.com/blue1st/nanokvm-ai-console/releases/download/v#{version}/NanoKVM-AI-Console-#{version}-mac-#{arch}.dmg"
   name "NanoKVM AI Console"
